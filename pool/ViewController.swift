@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var label: UILabel!
 
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        var cv = Int(sender.value)
+        label.text = "\(cv*2)"
+    }
 }
 
