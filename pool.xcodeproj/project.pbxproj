@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076F9DEA19CFA6FC00A8DCEF /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		078C2EDA19CF31A3006938DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2ED919CF31A3006938DA /* AppDelegate.swift */; };
 		078C2EDC19CF31A3006938DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2EDB19CF31A3006938DA /* ViewController.swift */; };
 		078C2EDF19CF31A3006938DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078C2EDD19CF31A3006938DA /* Main.storyboard */; };
@@ -41,6 +42,19 @@
 			remoteInfo = AlamofireTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		076F9DE919CFA6EA00A8DCEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				076F9DEA19CFA6FC00A8DCEF /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		078C2ED419CF31A3006938DA /* pool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +182,7 @@
 				078C2ED119CF31A3006938DA /* Frameworks */,
 				078C2ED219CF31A3006938DA /* Resources */,
 				D831173C0DB74A6D9BFC9E81 /* Copy Pods Resources */,
+				076F9DE919CFA6EA00A8DCEF /* CopyFiles */,
 			);
 			buildRules = (
 			);
