@@ -29,12 +29,40 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBOutlet weak var goto0: UIButton!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var shouldAnimate: UISwitch!
+    @IBOutlet weak var urlEntryField: UITextField!
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
 
     @IBAction func sliderValueChanged(sender: UISlider) {
         var cv = Int(sender.value)
         label.text = "\(cv*2)"
+    }
+    @IBAction func goto0Pressed(sender: AnyObject) {
+        let animated = shouldAnimate.selected
+        slider.setValue(0, animated: animated)
+    }
+    @IBAction func goButtonPressed(sender: AnyObject) {
+        urlEntryField.resignFirstResponder()
+        Alamofire.request(.GET, urlEntryField.text)
+            .response { (request, response, data, error) in
+                println(request)
+                println(response)
+                println(error)
+                self.resultLabel.text = response?.description
+        }
+    }
+    @IBAction func urlEntryFieldEditingDidBegin(sender: AnyObject) {
+        println("editing...")
+        urlEntryField.becomeFirstResponder()
+    }
+    @IBAction func urlEntryFieldEditingDidEnd(sender: AnyObject) {
+        println("editingDidEnd")
+        urlEntryField.resignFirstResponder()
     }
 }
 
