@@ -9,17 +9,36 @@
 import UIKit
 import Alamofire
 
+let base = "http://192.168.1.54:7378"
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
+        self.reloadView()
+
+    }
+    
+    func reloadView() {
         // Do any additional setup after loading the view, typically from a nib.
-        Alamofire.request(.GET, "http://httpbin.org/get")
-            .response { (request, response, data, error) in
-                println(request)
-                println(response)
-                println(error)
+        for i in 1...4 {
+            Alamofire.request(.GET, base + "/resources/sensors/shade\(i)/state")
+                .responseJSON { (request, response, data, error) in
+                    switch i as Int {
+                    case 1:
+                        self.shade1switch.setOn(data as Bool, animated: false)
+                    case 2:
+                        self.shade2switch.setOn(data as Bool, animated: false)
+                    case 3:
+                        self.shade3switch.setOn(data as Bool, animated: false)
+                    case 4:
+                        self.shade4switch.setOn(data as Bool, animated: false)
+                    default:
+                        println("huh?")
+                    }
+                    
+            }
         }
     }
 
@@ -29,40 +48,40 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    @IBOutlet weak var goto0: UIButton!
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var shouldAnimate: UISwitch!
-    @IBOutlet weak var urlEntryField: UITextField!
-    @IBOutlet weak var goButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var shade1switch: UISwitch!
+    @IBOutlet weak var shade2switch: UISwitch!
+    @IBOutlet weak var shade3switch: UISwitch!
+    @IBOutlet weak var shade4switch: UISwitch!
+ 
+    @IBAction func shadeStateChange(sender: AnyObject) {
+        
+        var objStr = ""
+        switch sender as UISwitch{
+        case shade1switch:
+            objStr = "shade1"
+        case shade2switch:
+            objStr = "shade2"
+        case shade3switch:
+            objStr = "shade3"
+        case shade4switch:
+            objStr = "shade4"
+        default:
+            println("Unknown sender")
+            return
+        }
 
-    @IBAction func sliderValueChanged(sender: UISlider) {
-        var cv = Int(sender.value)
-        label.text = "\(cv*2)"
-    }
-    @IBAction func goto0Pressed(sender: AnyObject) {
-        let animated = shouldAnimate.selected
-        slider.setValue(0, animated: animated)
-    }
-    @IBAction func goButtonPressed(sender: AnyObject) {
-        urlEntryField.resignFirstResponder()
-        Alamofire.request(.GET, urlEntryField.text)
+        var newState = (sender as UISwitch).on ? "1" : "0"
+        println(newState)
+        
+        Alamofire.request(.PUT, base + "/resources/sensors/" + objStr + "/state", parameters: ["value": newState], encoding: .JSONish)
             .response { (request, response, data, error) in
                 println(request)
-                println(response)
+                println(response?.statusCode)
                 println(error)
-                self.resultLabel.text = response?.description
         }
+        //Alamofire.upload(.PUT, base + "/resources/sensors/" + objStr + "/state", (newState as NSString).dataUsingEncoding(NSUTF8StringEncoding)!)
+
     }
-    @IBAction func urlEntryFieldEditingDidBegin(sender: AnyObject) {
-        println("editing...")
-        urlEntryField.becomeFirstResponder()
-    }
-    @IBAction func urlEntryFieldEditingDidEnd(sender: AnyObject) {
-        println("editingDidEnd")
-        urlEntryField.resignFirstResponder()
-    }
+
 }
 
