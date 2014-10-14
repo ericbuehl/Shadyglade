@@ -10,14 +10,20 @@ import UIKit
 import Alamofire
 
 let base = "http://192.168.1.54:7378"
+//let base = "https://192.168.1.51:7379" // rpi01
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
-        self.reloadView()
+        //self.reloadView()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        println("viewWilAppear")
     }
     
     func reloadView() {
@@ -25,19 +31,37 @@ class ViewController: UIViewController {
         for i in 1...4 {
             Alamofire.request(.GET, base + "/resources/sensors/shade\(i)/state")
                 .responseJSON { (request, response, data, error) in
+                    println(error)
+                    if let e = error? {
+                        var alert = UIAlertController(title: "Error", message: "Couldn't get shade status", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Boooo", style: .Default, handler: { action in
+                            switch action.style{
+                            case .Default:
+                                println("default")
+                                
+                            case .Cancel:
+                                println("cancel")
+                                
+                            case .Destructive:
+                                println("destructive")
+                            }
+                        }))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        return
+                    }
+                    var updown = ((data as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
                     switch i as Int {
                     case 1:
-                        self.shade1switch.setOn(data as Bool, animated: false)
+                        self.shade1switch.setOn(updown, animated: false)
                     case 2:
-                        self.shade2switch.setOn(data as Bool, animated: false)
+                        self.shade2switch.setOn(updown, animated: false)
                     case 3:
-                        self.shade3switch.setOn(data as Bool, animated: false)
+                        self.shade3switch.setOn(updown, animated: false)
                     case 4:
-                        self.shade4switch.setOn(data as Bool, animated: false)
+                        self.shade4switch.setOn(updown, animated: false)
                     default:
                         println("huh?")
                     }
-                    
             }
         }
     }
