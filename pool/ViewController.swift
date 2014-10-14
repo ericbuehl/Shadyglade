@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shade2switch: UISwitch!
     @IBOutlet weak var shade3switch: UISwitch!
     @IBOutlet weak var shade4switch: UISwitch!
+    @IBOutlet weak var shadeAllSwitch: UISwitch!
  
     @IBAction func shadeStateChange(sender: AnyObject) {
         
@@ -89,6 +90,12 @@ class ViewController: UIViewController {
             objStr = "shade3"
         case shade4switch:
             objStr = "shade4"
+        case shadeAllSwitch:
+            objStr = "allShades"
+            shade1switch.on = (sender as UISwitch).on
+            shade2switch.on = (sender as UISwitch).on
+            shade3switch.on = (sender as UISwitch).on
+            shade4switch.on = (sender as UISwitch).on
         default:
             println("Unknown sender")
             return
