@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
-        //self.reloadView()
+        var timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("reloadView"), userInfo: nil, repeats: true)
 
     }
     
@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     func reloadView() {
+        println("reloading view...")
         // Do any additional setup after loading the view, typically from a nib.
         for i in 1...4 {
             Alamofire.request(.GET, shadeBase + "/resources/sensors/shade\(i)/state")
