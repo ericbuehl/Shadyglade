@@ -65,6 +65,63 @@ class ViewController: UIViewController {
                     }
             }
         }
+        Alamofire.request(.GET, poolBase + "/resources/sensors/spa/state")
+            .responseJSON { (request, response, data, error) in
+                println(error)
+                if let e = error? {
+                    var alert = UIAlertController(title: "Error", message: "Couldn't get pool status", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Boooo", style: .Default, handler: { action in
+                        switch action.style{
+                        case .Default:
+                            println("default")
+                            
+                        case .Cancel:
+                            println("cancel")
+                            
+                        case .Destructive:
+                            println("destructive")
+                        }
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    return
+                }
+
+                switch data as Int {
+                case 0:
+                    self.spaState.textColor = UIColor.darkGrayColor()
+                    self.spaState.text = "Off"
+                    self.spaSwitch.on = false
+                    self.spaSwitch.enabled = true
+                case 1:
+                    self.spaState.textColor = UIColor.greenColor()
+                    self.spaState.text = "On"
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 2:
+                    self.spaState.textColor = UIColor.grayColor()
+                    self.spaState.text = "Starting..."
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = false
+                case 3:
+                    self.spaState.textColor = UIColor.yellowColor()
+                    self.spaState.text = "Warming..."
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 4:
+                    self.spaState.textColor = UIColor.orangeColor()
+                    self.spaState.text = "Standby"
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 5:
+                    self.spaState.textColor = UIColor.grayColor()
+                    self.spaState.text = "Stopping..."
+                    self.spaSwitch.on = false
+                    self.spaSwitch.enabled = false
+                default:
+                    println("huh?")
+                }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,47 +136,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var shade4switch: UISwitch!
     @IBOutlet weak var shadeAllSwitch: UISwitch!
  
-    @IBOutlet weak var spaWarmupStop: UIButton!
-    @IBOutlet weak var spaWarmupRun: UIButton!
-    @IBOutlet weak var spaReadyStop: UIButton!
-    @IBOutlet weak var spaReadyRun: UIButton!
-    @IBOutlet weak var spaShutdownStop: UIButton!
-    @IBOutlet weak var spaShutdownRun: UIButton!
+    @IBOutlet weak var spaSwitch: UISwitch!
+    @IBOutlet weak var spaState: UILabel!
+
     
     @IBAction func spaSceneChange(sender: AnyObject) {
         
-        var objKey = ""
-        var objVal = ""
-        switch sender as UIButton{
-        case spaWarmupStop:
-            objKey = "spaWarmup"
-            objVal = "0"
-        case spaWarmupRun:
-            objKey = "spaWarmup"
-            objVal = "1"
-        case spaReadyStop:
-            objKey = "spaReady"
-            objVal = "0"
-        case spaReadyRun:
-            objKey = "spaReady"
-            objVal = "1"
-        case spaShutdownStop:
-            objKey = "spaShutdown"
-            objVal = "0"
-        case spaShutdownRun:
-            objKey = "spaShutdown"
-            objVal = "1"
-        default:
-            println("Unknown sender")
-            return
-        }
-        
-        Alamofire.request(.PUT, poolBase + "/resources/sensors/" + objKey + "/state", parameters: ["value": objVal], encoding: .JSONish)
+        Alamofire.request(.PUT, poolBase + "/resources/sensors/spa/state", parameters: ["value": (sender as UISwitch).on ? "1" : "0"], encoding: .JSONish)
             .response { (request, response, data, error) in
                 println(request)
                 println(response?.statusCode)
                 println(error)
         }
+        self.reloadView()
 
     }
     
