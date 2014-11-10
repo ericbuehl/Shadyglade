@@ -16,7 +16,6 @@
 		078C2EF019CF31A3006938DA /* poolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2EEF19CF31A3006938DA /* poolTests.swift */; };
 		07AB9AE919CF7C5C0027F8A9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB9AE819CF7C5C0027F8A9 /* SwiftyJSON.swift */; };
 		07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; };
-		F75F92E29C5C470C8911D74E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3F6B6A11DA425FA920565E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +68,6 @@
 		078C2EEF19CF31A3006938DA /* poolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = poolTests.swift; sourceTree = "<group>"; };
 		07AB9AE819CF7C5C0027F8A9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		07AB9AEA19CF85730027F8A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		3E8F1E06064647D0A79FC4A1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB3F6B6A11DA425FA920565E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */,
-				F75F92E29C5C470C8911D74E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +97,6 @@
 				078C2ED619CF31A3006938DA /* pool */,
 				078C2EEC19CF31A3006938DA /* poolTests */,
 				078C2ED519CF31A3006938DA /* Products */,
-				3E8F1E06064647D0A79FC4A1 /* Pods.xcconfig */,
 				F3FF205A076245B3941589B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -177,11 +173,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "pool" */;
 			buildPhases = (
-				A10B733457114E9AB61F50CF /* Check Pods Manifest.lock */,
 				078C2ED019CF31A3006938DA /* Sources */,
 				078C2ED119CF31A3006938DA /* Frameworks */,
 				078C2ED219CF31A3006938DA /* Resources */,
-				D831173C0DB74A6D9BFC9E81 /* Copy Pods Resources */,
 				076F9DE919CFA6EA00A8DCEF /* CopyFiles */,
 			);
 			buildRules = (
@@ -291,39 +285,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A10B733457114E9AB61F50CF /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D831173C0DB74A6D9BFC9E81 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		078C2ED019CF31A3006938DA /* Sources */ = {
@@ -455,7 +416,6 @@
 		};
 		078C2EF419CF31A3006938DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8F1E06064647D0A79FC4A1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -469,7 +429,6 @@
 		};
 		078C2EF519CF31A3006938DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8F1E06064647D0A79FC4A1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
