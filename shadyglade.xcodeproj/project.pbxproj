@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076E64D71A10493A00407989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64CB1A10493A00407989 /* AppDelegate.swift */; };
+		076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CC1A10493A00407989 /* LaunchScreen.xib */; };
+		076E64D91A10493A00407989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CE1A10493A00407989 /* Main.storyboard */; };
+		076E64DA1A10493A00407989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D01A10493A00407989 /* Images.xcassets */; };
+		076E64DB1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D11A10493A00407989 /* Info.plist */; };
+		076E64DC1A10493A00407989 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D21A10493A00407989 /* SwiftyJSON.swift */; };
+		076E64DD1A10493A00407989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D31A10493A00407989 /* ViewController.swift */; };
+		076E64DE1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D51A10493A00407989 /* Info.plist */; };
+		076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64E21A10498D00407989 /* shadygladeTests.swift */; };
 		076F9DEA19CFA6FC00A8DCEF /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		078C2EDA19CF31A3006938DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2ED919CF31A3006938DA /* AppDelegate.swift */; };
-		078C2EDC19CF31A3006938DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2EDB19CF31A3006938DA /* ViewController.swift */; };
-		078C2EDF19CF31A3006938DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078C2EDD19CF31A3006938DA /* Main.storyboard */; };
-		078C2EE119CF31A3006938DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078C2EE019CF31A3006938DA /* Images.xcassets */; };
-		078C2EE419CF31A3006938DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078C2EE219CF31A3006938DA /* LaunchScreen.xib */; };
-		078C2EF019CF31A3006938DA /* poolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C2EEF19CF31A3006938DA /* poolTests.swift */; };
-		07AB9AE919CF7C5C0027F8A9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB9AE819CF7C5C0027F8A9 /* SwiftyJSON.swift */; };
 		07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +26,7 @@
 			containerPortal = 078C2ECC19CF31A3006938DA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 078C2ED319CF31A3006938DA;
-			remoteInfo = pool;
+			remoteInfo = shadyglade;
 		};
 		07AB9AEF19CF85730027F8A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -56,17 +58,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		078C2ED419CF31A3006938DA /* pool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		078C2ED819CF31A3006938DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		078C2ED919CF31A3006938DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		078C2EDB19CF31A3006938DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		078C2EDE19CF31A3006938DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		078C2EE019CF31A3006938DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		078C2EE319CF31A3006938DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		078C2EE919CF31A3006938DA /* poolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		078C2EEE19CF31A3006938DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		078C2EEF19CF31A3006938DA /* poolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = poolTests.swift; sourceTree = "<group>"; };
-		07AB9AE819CF7C5C0027F8A9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		076E64CB1A10493A00407989 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		076E64CD1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		076E64CF1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		076E64D01A10493A00407989 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		076E64D11A10493A00407989 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076E64D21A10493A00407989 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		076E64D31A10493A00407989 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		076E64D51A10493A00407989 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076E64E21A10498D00407989 /* shadygladeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shadygladeTests.swift; sourceTree = "<group>"; };
+		078C2ED419CF31A3006938DA /* shadyglade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadyglade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		078C2EE919CF31A3006938DA /* shadygladeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadygladeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AB9AEA19CF85730027F8A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		FB3F6B6A11DA425FA920565E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,12 +92,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076E64CA1A10493A00407989 /* shadyglade */ = {
+			isa = PBXGroup;
+			children = (
+				076E64CB1A10493A00407989 /* AppDelegate.swift */,
+				076E64CC1A10493A00407989 /* LaunchScreen.xib */,
+				076E64CE1A10493A00407989 /* Main.storyboard */,
+				076E64D01A10493A00407989 /* Images.xcassets */,
+				076E64D11A10493A00407989 /* Info.plist */,
+				076E64D21A10493A00407989 /* SwiftyJSON.swift */,
+				076E64D31A10493A00407989 /* ViewController.swift */,
+			);
+			path = shadyglade;
+			sourceTree = "<group>";
+		};
+		076E64D41A10493A00407989 /* shadygladeTests */ = {
+			isa = PBXGroup;
+			children = (
+				076E64E21A10498D00407989 /* shadygladeTests.swift */,
+				076E64D51A10493A00407989 /* Info.plist */,
+			);
+			path = shadygladeTests;
+			sourceTree = "<group>";
+		};
 		078C2ECB19CF31A3006938DA = {
 			isa = PBXGroup;
 			children = (
 				07AB9AEA19CF85730027F8A9 /* Alamofire.xcodeproj */,
-				078C2ED619CF31A3006938DA /* pool */,
-				078C2EEC19CF31A3006938DA /* poolTests */,
+				076E64CA1A10493A00407989 /* shadyglade */,
+				076E64D41A10493A00407989 /* shadygladeTests */,
 				078C2ED519CF31A3006938DA /* Products */,
 				F3FF205A076245B3941589B8 /* Frameworks */,
 			);
@@ -104,49 +129,10 @@
 		078C2ED519CF31A3006938DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				078C2ED419CF31A3006938DA /* pool.app */,
-				078C2EE919CF31A3006938DA /* poolTests.xctest */,
+				078C2ED419CF31A3006938DA /* shadyglade.app */,
+				078C2EE919CF31A3006938DA /* shadygladeTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		078C2ED619CF31A3006938DA /* pool */ = {
-			isa = PBXGroup;
-			children = (
-				07AB9AE819CF7C5C0027F8A9 /* SwiftyJSON.swift */,
-				078C2ED919CF31A3006938DA /* AppDelegate.swift */,
-				078C2EDB19CF31A3006938DA /* ViewController.swift */,
-				078C2EDD19CF31A3006938DA /* Main.storyboard */,
-				078C2EE019CF31A3006938DA /* Images.xcassets */,
-				078C2EE219CF31A3006938DA /* LaunchScreen.xib */,
-				078C2ED719CF31A3006938DA /* Supporting Files */,
-			);
-			path = pool;
-			sourceTree = "<group>";
-		};
-		078C2ED719CF31A3006938DA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				078C2ED819CF31A3006938DA /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		078C2EEC19CF31A3006938DA /* poolTests */ = {
-			isa = PBXGroup;
-			children = (
-				078C2EEF19CF31A3006938DA /* poolTests.swift */,
-				078C2EED19CF31A3006938DA /* Supporting Files */,
-			);
-			path = poolTests;
-			sourceTree = "<group>";
-		};
-		078C2EED19CF31A3006938DA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				078C2EEE19CF31A3006938DA /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		07AB9AEB19CF85730027F8A9 /* Products */ = {
@@ -169,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		078C2ED319CF31A3006938DA /* pool */ = {
+		078C2ED319CF31A3006938DA /* shadyglade */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "pool" */;
+			buildConfigurationList = 078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadyglade" */;
 			buildPhases = (
 				078C2ED019CF31A3006938DA /* Sources */,
 				078C2ED119CF31A3006938DA /* Frameworks */,
@@ -182,14 +168,14 @@
 			);
 			dependencies = (
 			);
-			name = pool;
-			productName = pool;
-			productReference = 078C2ED419CF31A3006938DA /* pool.app */;
+			name = shadyglade;
+			productName = shadyglade;
+			productReference = 078C2ED419CF31A3006938DA /* shadyglade.app */;
 			productType = "com.apple.product-type.application";
 		};
-		078C2EE819CF31A3006938DA /* poolTests */ = {
+		078C2EE819CF31A3006938DA /* shadygladeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 078C2EF619CF31A3006938DA /* Build configuration list for PBXNativeTarget "poolTests" */;
+			buildConfigurationList = 078C2EF619CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadygladeTests" */;
 			buildPhases = (
 				078C2EE519CF31A3006938DA /* Sources */,
 				078C2EE619CF31A3006938DA /* Frameworks */,
@@ -200,9 +186,9 @@
 			dependencies = (
 				078C2EEB19CF31A3006938DA /* PBXTargetDependency */,
 			);
-			name = poolTests;
-			productName = poolTests;
-			productReference = 078C2EE919CF31A3006938DA /* poolTests.xctest */;
+			name = shadygladeTests;
+			productName = shadygladeTests;
+			productReference = 078C2EE919CF31A3006938DA /* shadygladeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 078C2ECF19CF31A3006938DA /* Build configuration list for PBXProject "pool" */;
+			buildConfigurationList = 078C2ECF19CF31A3006938DA /* Build configuration list for PBXProject "shadyglade" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,8 +229,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				078C2ED319CF31A3006938DA /* pool */,
-				078C2EE819CF31A3006938DA /* poolTests */,
+				078C2ED319CF31A3006938DA /* shadyglade */,
+				078C2EE819CF31A3006938DA /* shadygladeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,9 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078C2EDF19CF31A3006938DA /* Main.storyboard in Resources */,
-				078C2EE419CF31A3006938DA /* LaunchScreen.xib in Resources */,
-				078C2EE119CF31A3006938DA /* Images.xcassets in Resources */,
+				076E64DE1A10493A00407989 /* Info.plist in Resources */,
+				076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */,
+				076E64D91A10493A00407989 /* Main.storyboard in Resources */,
+				076E64DA1A10493A00407989 /* Images.xcassets in Resources */,
+				076E64DB1A10493A00407989 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07AB9AE919CF7C5C0027F8A9 /* SwiftyJSON.swift in Sources */,
-				078C2EDC19CF31A3006938DA /* ViewController.swift in Sources */,
-				078C2EDA19CF31A3006938DA /* AppDelegate.swift in Sources */,
+				076E64DD1A10493A00407989 /* ViewController.swift in Sources */,
+				076E64D71A10493A00407989 /* AppDelegate.swift in Sources */,
+				076E64DC1A10493A00407989 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078C2EF019CF31A3006938DA /* poolTests.swift in Sources */,
+				076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,26 +298,26 @@
 /* Begin PBXTargetDependency section */
 		078C2EEB19CF31A3006938DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 078C2ED319CF31A3006938DA /* pool */;
+			target = 078C2ED319CF31A3006938DA /* shadyglade */;
 			targetProxy = 078C2EEA19CF31A3006938DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		078C2EDD19CF31A3006938DA /* Main.storyboard */ = {
+		076E64CC1A10493A00407989 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				078C2EDE19CF31A3006938DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		078C2EE219CF31A3006938DA /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				078C2EE319CF31A3006938DA /* Base */,
+				076E64CD1A10493A00407989 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		076E64CE1A10493A00407989 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076E64CF1A10493A00407989 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -420,9 +408,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = pool/Info.plist;
+				INFOPLIST_FILE = shadyglade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = shadyglade;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -433,9 +421,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = pool/Info.plist;
+				INFOPLIST_FILE = shadyglade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = shadyglade;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -452,10 +440,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = poolTests/Info.plist;
+				INFOPLIST_FILE = shadygladeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pool.app/pool";
+				PRODUCT_NAME = shadygladeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shadyglade.app/shadyglade";
 			};
 			name = Debug;
 		};
@@ -467,17 +455,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = poolTests/Info.plist;
+				INFOPLIST_FILE = shadygladeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pool.app/pool";
+				PRODUCT_NAME = shadygladeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shadyglade.app/shadyglade";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		078C2ECF19CF31A3006938DA /* Build configuration list for PBXProject "pool" */ = {
+		078C2ECF19CF31A3006938DA /* Build configuration list for PBXProject "shadyglade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				078C2EF119CF31A3006938DA /* Debug */,
@@ -486,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "pool" */ = {
+		078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadyglade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				078C2EF419CF31A3006938DA /* Debug */,
@@ -495,7 +483,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		078C2EF619CF31A3006938DA /* Build configuration list for PBXNativeTarget "poolTests" */ = {
+		078C2EF619CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadygladeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				078C2EF719CF31A3006938DA /* Debug */,

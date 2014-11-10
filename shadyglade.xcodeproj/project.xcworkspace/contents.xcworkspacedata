@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:pool.xcodeproj">
+      location = "self:shadyglade.xcodeproj">
    </FileRef>
 </Workspace>
