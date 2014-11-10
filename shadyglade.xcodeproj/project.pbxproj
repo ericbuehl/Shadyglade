@@ -70,7 +70,6 @@
 		078C2ED419CF31A3006938DA /* shadyglade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadyglade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078C2EE919CF31A3006938DA /* shadygladeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadygladeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AB9AEA19CF85730027F8A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		FB3F6B6A11DA425FA920565E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +146,6 @@
 		F3FF205A076245B3941589B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB3F6B6A11DA425FA920565E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
