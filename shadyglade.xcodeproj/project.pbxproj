@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076C72441A22C6E000EF1392 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C72431A22C6E000EF1392 /* SwiftyJSON.framework */; };
 		076E64D71A10493A00407989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64CB1A10493A00407989 /* AppDelegate.swift */; };
 		076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CC1A10493A00407989 /* LaunchScreen.xib */; };
 		076E64D91A10493A00407989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CE1A10493A00407989 /* Main.storyboard */; };
 		076E64DA1A10493A00407989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D01A10493A00407989 /* Images.xcassets */; };
-		076E64DC1A10493A00407989 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D21A10493A00407989 /* SwiftyJSON.swift */; };
 		076E64DD1A10493A00407989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D31A10493A00407989 /* ViewController.swift */; };
 		076E64DE1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D51A10493A00407989 /* Info.plist */; };
 		076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64E21A10498D00407989 /* shadygladeTests.swift */; };
@@ -59,12 +59,12 @@
 
 /* Begin PBXFileReference section */
 		07664F971A226808009641EA /* shadyglade-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shadyglade-Bridging-Header.h"; sourceTree = "<group>"; };
+		076C72431A22C6E000EF1392 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		076E64CB1A10493A00407989 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076E64CD1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		076E64CF1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		076E64D01A10493A00407989 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		076E64D11A10493A00407989 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		076E64D21A10493A00407989 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		076E64D31A10493A00407989 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		076E64D51A10493A00407989 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076E64E21A10498D00407989 /* shadygladeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shadygladeTests.swift; sourceTree = "<group>"; };
@@ -80,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076C72441A22C6E000EF1392 /* SwiftyJSON.framework in Frameworks */,
 				07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */,
 				F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */,
 			);
@@ -103,7 +104,6 @@
 				076E64CE1A10493A00407989 /* Main.storyboard */,
 				076E64D01A10493A00407989 /* Images.xcassets */,
 				076E64D11A10493A00407989 /* Info.plist */,
-				076E64D21A10493A00407989 /* SwiftyJSON.swift */,
 				076E64D31A10493A00407989 /* ViewController.swift */,
 				07664F971A226808009641EA /* shadyglade-Bridging-Header.h */,
 			);
@@ -152,6 +152,7 @@
 		F3FF205A076245B3941589B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				076C72431A22C6E000EF1392 /* SwiftyJSON.framework */,
 				FDCF6CF5BD294F0DA5E7F132 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -320,7 +321,6 @@
 			files = (
 				076E64DD1A10493A00407989 /* ViewController.swift in Sources */,
 				076E64D71A10493A00407989 /* AppDelegate.swift in Sources */,
-				076E64DC1A10493A00407989 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +448,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = shadyglade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = shadyglade;
@@ -463,6 +467,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = shadyglade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = shadyglade;
