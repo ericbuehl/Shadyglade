@@ -1,6 +1,6 @@
 //
-//  poolTests.swift
-//  poolTests
+//  shadygladeTests.swift
+//  shadygladeTests
 //
 //  Created by Eric Buehl on 9/21/14.
 //  Copyright (c) 2014 Eric Buehl. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class poolTests: XCTestCase {
+class shadygladeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
