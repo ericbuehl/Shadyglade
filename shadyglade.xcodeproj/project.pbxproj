@@ -11,13 +11,13 @@
 		076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CC1A10493A00407989 /* LaunchScreen.xib */; };
 		076E64D91A10493A00407989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CE1A10493A00407989 /* Main.storyboard */; };
 		076E64DA1A10493A00407989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D01A10493A00407989 /* Images.xcassets */; };
-		076E64DB1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D11A10493A00407989 /* Info.plist */; };
 		076E64DC1A10493A00407989 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D21A10493A00407989 /* SwiftyJSON.swift */; };
 		076E64DD1A10493A00407989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D31A10493A00407989 /* ViewController.swift */; };
 		076E64DE1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D51A10493A00407989 /* Info.plist */; };
 		076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64E21A10498D00407989 /* shadygladeTests.swift */; };
 		076F9DEA19CFA6FC00A8DCEF /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AB9AF019CF85730027F8A9 /* Alamofire.framework */; };
+		F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF6CF5BD294F0DA5E7F132 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07664F971A226808009641EA /* shadyglade-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shadyglade-Bridging-Header.h"; sourceTree = "<group>"; };
 		076E64CB1A10493A00407989 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076E64CD1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		076E64CF1A10493A00407989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +71,8 @@
 		078C2ED419CF31A3006938DA /* shadyglade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadyglade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078C2EE919CF31A3006938DA /* shadygladeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadygladeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AB9AEA19CF85730027F8A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		72A31B0E99E6486FB9920372 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FDCF6CF5BD294F0DA5E7F132 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07AB9AF319CF86630027F8A9 /* Alamofire.framework in Frameworks */,
+				F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +105,7 @@
 				076E64D11A10493A00407989 /* Info.plist */,
 				076E64D21A10493A00407989 /* SwiftyJSON.swift */,
 				076E64D31A10493A00407989 /* ViewController.swift */,
+				07664F971A226808009641EA /* shadyglade-Bridging-Header.h */,
 			);
 			path = shadyglade;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				076E64D41A10493A00407989 /* shadygladeTests */,
 				078C2ED519CF31A3006938DA /* Products */,
 				F3FF205A076245B3941589B8 /* Frameworks */,
+				72A31B0E99E6486FB9920372 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +152,7 @@
 		F3FF205A076245B3941589B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FDCF6CF5BD294F0DA5E7F132 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,10 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadyglade" */;
 			buildPhases = (
+				B8348E2BC3754E608D7103FF /* Check Pods Manifest.lock */,
 				078C2ED019CF31A3006938DA /* Sources */,
 				078C2ED119CF31A3006938DA /* Frameworks */,
 				078C2ED219CF31A3006938DA /* Resources */,
 				076F9DE919CFA6EA00A8DCEF /* CopyFiles */,
+				625AE6EFF14F4DB4A1C0F39A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,7 +204,7 @@
 		078C2ECC19CF31A3006938DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Eric Buehl";
 				TargetAttributes = {
 					078C2ED319CF31A3006938DA = {
@@ -259,7 +268,6 @@
 				076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */,
 				076E64D91A10493A00407989 /* Main.storyboard in Resources */,
 				076E64DA1A10493A00407989 /* Images.xcassets in Resources */,
-				076E64DB1A10493A00407989 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +279,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		625AE6EFF14F4DB4A1C0F39A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8348E2BC3754E608D7103FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		078C2ED019CF31A3006938DA /* Sources */ = {
@@ -402,6 +443,7 @@
 		};
 		078C2EF419CF31A3006938DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A31B0E99E6486FB9920372 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -410,11 +452,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = shadyglade;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "shadyglade/shadyglade-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		078C2EF519CF31A3006938DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A31B0E99E6486FB9920372 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -423,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = shadyglade;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "shadyglade/shadyglade-Bridging-Header.h";
 			};
 			name = Release;
 		};
