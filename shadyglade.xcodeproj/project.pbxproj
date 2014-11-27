@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076C72441A22C6E000EF1392 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C72431A22C6E000EF1392 /* SwiftyJSON.framework */; };
 		076E64D71A10493A00407989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64CB1A10493A00407989 /* AppDelegate.swift */; };
 		076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CC1A10493A00407989 /* LaunchScreen.xib */; };
 		076E64D91A10493A00407989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CE1A10493A00407989 /* Main.storyboard */; };
@@ -62,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076C72441A22C6E000EF1392 /* SwiftyJSON.framework in Frameworks */,
 				F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
