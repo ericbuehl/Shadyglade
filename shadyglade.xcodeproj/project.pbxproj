@@ -14,6 +14,8 @@
 		076E64DD1A10493A00407989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64D31A10493A00407989 /* ViewController.swift */; };
 		076E64DE1A10493A00407989 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 076E64D51A10493A00407989 /* Info.plist */; };
 		076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64E21A10498D00407989 /* shadygladeTests.swift */; };
+		07D6A57F1A2BB9DC00439611 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */; };
+		07D6A5821A2BC02600439611 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D6A5811A2BC02600439611 /* settings.png */; };
 		F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF6CF5BD294F0DA5E7F132 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		076E64E21A10498D00407989 /* shadygladeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shadygladeTests.swift; sourceTree = "<group>"; };
 		078C2ED419CF31A3006938DA /* shadyglade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadyglade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078C2EE919CF31A3006938DA /* shadygladeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadygladeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
+		07D6A5811A2BC02600439611 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		72A31B0E99E6486FB9920372 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FDCF6CF5BD294F0DA5E7F132 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +82,7 @@
 		076E64CA1A10493A00407989 /* shadyglade */ = {
 			isa = PBXGroup;
 			children = (
+				07D6A5801A2BBFD700439611 /* images */,
 				076E64CB1A10493A00407989 /* AppDelegate.swift */,
 				076E64CC1A10493A00407989 /* LaunchScreen.xib */,
 				076E64CE1A10493A00407989 /* Main.storyboard */,
@@ -85,6 +90,7 @@
 				076E64D11A10493A00407989 /* Info.plist */,
 				076E64D31A10493A00407989 /* ViewController.swift */,
 				07664F971A226808009641EA /* shadyglade-Bridging-Header.h */,
+				07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */,
 			);
 			path = shadyglade;
 			sourceTree = "<group>";
@@ -116,6 +122,14 @@
 				078C2EE919CF31A3006938DA /* shadygladeTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		07D6A5801A2BBFD700439611 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				07D6A5811A2BC02600439611 /* settings.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		F3FF205A076245B3941589B8 /* Frameworks */ = {
@@ -212,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				076E64DE1A10493A00407989 /* Info.plist in Resources */,
+				07D6A5821A2BC02600439611 /* settings.png in Resources */,
 				076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */,
 				076E64D91A10493A00407989 /* Main.storyboard in Resources */,
 				076E64DA1A10493A00407989 /* Images.xcassets in Resources */,
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				076E64DD1A10493A00407989 /* ViewController.swift in Sources */,
+				07D6A57F1A2BB9DC00439611 /* DismissSegue.swift in Sources */,
 				076E64D71A10493A00407989 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
