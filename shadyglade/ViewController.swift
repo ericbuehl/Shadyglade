@@ -22,56 +22,102 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         println("viewDidLoad")
         manager.requestSerializer! = AFJSONRequestSerializer()
+
         var timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("reloadView"), userInfo: nil, repeats: true)
 
     }
     
     override func viewWillAppear(animated: Bool) {
-        println("viewWilAppear")
+        println("viewWillAppear")
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        println("viewDidAppear")
+        self.reloadView()
+        
+    }
+
+    
+    func failureAlert(message: String) {
+        var alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Boooo", style: .Default, handler: { action in
+            switch action.style{
+            case .Default:
+                println("default")
+                
+            case .Cancel:
+                println("cancel")
+                
+            case .Destructive:
+                println("destructive")
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func RequestOperationFailureAlert(operation: AFHTTPRequestOperation!,error: NSError!) {
+        println(error)
+        self.failureAlert(error.localizedDescription)
+        
     }
     
     func reloadView() {
         println("reloading view...")
         // Do any additional setup after loading the view, typically from a nib.
-        for i in 1...4 {
-            manager.GET(shadeBase + "/resources/sensors/shade\(i)/state", //"http://ip.jsontest.com/",
-                parameters: nil,
-                success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                    let responseDict = responseObject as NSDictionary
-                    let updown = ((responseDict["state"]! as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
-                    switch i as Int {
-                    case 1:
-                        self.shade1switch.setOn(updown, animated: false)
-                    case 2:
-                        self.shade2switch.setOn(updown, animated: false)
-                    case 3:
-                        self.shade3switch.setOn(updown, animated: false)
-                    case 4:
-                        self.shade4switch.setOn(updown, animated: false)
-                    default:
-                        println("huh?")
-                    }
-                    
-                },
-                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                    var alert = UIAlertController(title: "Error", message: "Couldn't get shade status", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Boooo", style: .Default, handler: { action in
-                        switch action.style{
-                        case .Default:
-                            println("default")
-                            
-                        case .Cancel:
-                            println("cancel")
-                            
-                        case .Destructive:
-                            println("destructive")
-                        }
-                    }))
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    return
-            })
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let urlBase = defaults.stringForKey("baseUrl") {
 
+            for i in 1...1 {
+/*
+                from AFNetworking/AFHTTPRequestOperationManager.m
+                NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+                AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
+                [self.operationQueue addOperation:operation];
+*/
+                let request = manager.requestSerializer.requestWithMethod("GET", URLString: urlBase + "/resources/sensors/shade\(i)/state", parameters: nil, error: nil)
+                let operation = manager.HTTPRequestOperationWithRequest(request,
+                    success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                        let responseDict = responseObject as NSDictionary
+                        let updown = ((responseDict["state"]! as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
+                        switch i as Int {
+                        case 1:
+                            self.shade1switch.setOn(updown, animated: false)
+                        case 2:
+                            self.shade2switch.setOn(updown, animated: false)
+                        case 3:
+                            self.shade3switch.setOn(updown, animated: false)
+                        case 4:
+                            self.shade4switch.setOn(updown, animated: false)
+                        default:
+                            println("huh?")
+                        }
+                        
+                    },
+                    failure: self.RequestOperationFailureAlert)
+                
+                // set up client cert
+                
+                operation.setWillSendRequestForAuthenticationChallengeBlock({ (connection: NSURLConnection!, authenticationChannenge: NSURLAuthenticationChallenge!) in
+                    println("AUTH CHALLENGE")
+                    let key = defaults.stringForKey("sslKey")
+                    let cert = defaults.stringForKey("sslCert")
+                    if key == nil || cert == nil || countElements(key!) < 1 || countElements(cert!) < 1 {
+                        self.failureAlert("missing cert")
+                        connection.cancel()
+                    }
+                })
+                
+                manager.operationQueue.addOperation(operation)
+
+            }
         }
+        else {
+            performSegueWithIdentifier("goToSettings", sender: self)
+        }
+        /*
         manager.GET(poolBase + "/resources/sensors/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             let responseDict = responseObject as NSDictionary
 
@@ -110,26 +156,10 @@ class ViewController: UIViewController {
                 println("huh?")
             }
             
-            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println(error)
-                var alert = UIAlertController(title: "Error", message: "Couldn't get pool status", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Boooo", style: .Default, handler: { action in
-                    switch action.style{
-                    case .Default:
-                        println("default")
-                        
-                    case .Cancel:
-                        println("cancel")
-                        
-                    case .Destructive:
-                        println("destructive")
-                    }
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
-                return
-        })
+            }, failure: self.RequestOperationFailureAlert
+        )
 
-
+*/
     }
 
     override func didReceiveMemoryWarning() {

@@ -16,6 +16,7 @@
 		076E64E31A10498D00407989 /* shadygladeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64E21A10498D00407989 /* shadygladeTests.swift */; };
 		07D6A57F1A2BB9DC00439611 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */; };
 		07D6A5821A2BC02600439611 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D6A5811A2BC02600439611 /* settings.png */; };
+		07D6A5841A2BC40300439611 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6A5831A2BC40300439611 /* SettingsController.swift */; };
 		F7356F15DBA247BEA6131936 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF6CF5BD294F0DA5E7F132 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		078C2EE919CF31A3006938DA /* shadygladeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadygladeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		07D6A5811A2BC02600439611 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		07D6A5831A2BC40300439611 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		72A31B0E99E6486FB9920372 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FDCF6CF5BD294F0DA5E7F132 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				076E64D31A10493A00407989 /* ViewController.swift */,
 				07664F971A226808009641EA /* shadyglade-Bridging-Header.h */,
 				07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */,
+				07D6A5831A2BC40300439611 /* SettingsController.swift */,
 			);
 			path = shadyglade;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D6A5841A2BC40300439611 /* SettingsController.swift in Sources */,
 				076E64DD1A10493A00407989 /* ViewController.swift in Sources */,
 				07D6A57F1A2BB9DC00439611 /* DismissSegue.swift in Sources */,
 				076E64D71A10493A00407989 /* AppDelegate.swift in Sources */,
