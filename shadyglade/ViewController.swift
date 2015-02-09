@@ -10,10 +10,22 @@ import UIKit
 
 let shadeBase = "http://192.168.1.54:7378"
 let poolBase = "http://192.168.1.50:7379"
+let gaeBase = "https://shadyglade-app.appspot.com"
 //let base = "https://192.168.1.51:7379" // rpi01
 
 let manager = AFHTTPRequestOperationManager()
 
+func dataToHex(data: NSData) -> NSString
+{
+    var str = NSMutableString(capacity:100)
+    let p = UnsafePointer<UInt8>(data.bytes)
+    let len = data.length
+    
+    for var i=0; i<len; ++i {
+        str.appendFormat("%02.2X", p[i])
+    }
+    return str
+}
 
 
 class ViewController: UIViewController {
@@ -77,7 +89,7 @@ class ViewController: UIViewController {
                 AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
                 [self.operationQueue addOperation:operation];
 */
-                let request = manager.requestSerializer.requestWithMethod("GET", URLString: urlBase + "/resources/sensors/shade\(i)/state", parameters: nil, error: nil)
+                let request = manager.requestSerializer.requestWithMethod("GET", URLString: shadeBase + "/resources/sensors/shade\(i)/state", parameters: nil, error: nil)
                 let operation = manager.HTTPRequestOperationWithRequest(request,
                     success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                         let responseDict = responseObject as NSDictionary
@@ -221,6 +233,17 @@ class ViewController: UIViewController {
             println(error)
         })
 
+    }
+    
+    func registerPushToken(token: NSData)
+    {
+        manager.POST(gaeBase + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            
+            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("FAILED!")
+                println(error)
+        })
+        
     }
 
 }
