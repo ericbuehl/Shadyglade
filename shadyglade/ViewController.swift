@@ -110,18 +110,6 @@ class ViewController: UIViewController {
                     },
                     failure: self.RequestOperationFailureAlert)
                 
-                // set up client cert
-                
-                operation.setWillSendRequestForAuthenticationChallengeBlock({ (connection: NSURLConnection!, authenticationChannenge: NSURLAuthenticationChallenge!) in
-                    println("AUTH CHALLENGE")
-                    let key = defaults.stringForKey("sslKey")
-                    let cert = defaults.stringForKey("sslCert")
-                    if key == nil || cert == nil || countElements(key!) < 1 || countElements(cert!) < 1 {
-                        self.failureAlert("missing cert")
-                        connection.cancel()
-                    }
-                })
-                
                 manager.operationQueue.addOperation(operation)
 
             }
