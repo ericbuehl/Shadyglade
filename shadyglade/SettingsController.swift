@@ -25,6 +25,9 @@ class SettingsController: UIViewController {
         super.viewDidLoad()
         
     }
+    @IBAction func hostFieldDidEndOnExit(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
     
     override func viewWillAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
