@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         
         if let urlBase = defaults.stringForKey("baseUrl") {
 
-            for i in 1...1 {
+            for i in 1...4 {
 /*
                 from AFNetworking/AFHTTPRequestOperationManager.m
                 NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
         else {
             performSegueWithIdentifier("goToSettings", sender: self)
         }
-        /*
+
         manager.GET(poolBase + "/resources/sensors/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             let responseDict = responseObject as NSDictionary
 
@@ -170,8 +170,6 @@ class ViewController: UIViewController {
             
             }, failure: self.RequestOperationFailureAlert
         )
-
-*/
     }
 
     override func didReceiveMemoryWarning() {
