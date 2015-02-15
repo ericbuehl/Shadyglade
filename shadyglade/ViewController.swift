@@ -8,9 +8,12 @@
 
 import UIKit
 
-let shadeBase = "http://192.168.1.54:7378"
-let poolBase = "http://192.168.1.50:7379"
-let gaeBase = "https://shadyglade-app.appspot.com"
+//let shadeBase = "http://192.168.1.54:7378"
+//let poolBase = "http://192.168.1.50:7379"
+
+//let baseUrl = "https://shadyglade-app.appspot.com"
+let baseUrl = "http://localhost:8888"
+
 //let base = "https://192.168.1.51:7379" // rpi01
 
 let manager = AFHTTPRequestOperationManager()
@@ -89,7 +92,7 @@ class ViewController: UIViewController {
                 AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
                 [self.operationQueue addOperation:operation];
 */
-                let request = manager.requestSerializer.requestWithMethod("GET", URLString: shadeBase + "/resources/sensors/shade\(i)/state", parameters: nil, error: nil)
+                let request = manager.requestSerializer.requestWithMethod("GET", URLString: baseUrl + "/resources/shade\(i)/state", parameters: nil, error: nil)
                 let operation = manager.HTTPRequestOperationWithRequest(request,
                     success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                         let responseDict = responseObject as NSDictionary
@@ -118,7 +121,7 @@ class ViewController: UIViewController {
             performSegueWithIdentifier("goToSettings", sender: self)
         }
 
-        manager.GET(poolBase + "/resources/sensors/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+        manager.GET(baseUrl + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             let responseDict = responseObject as NSDictionary
 
             switch responseDict["state"]! as Int {
@@ -177,7 +180,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func spaSceneChange(sender: AnyObject) {
-        manager.PUT(poolBase + "/resources/sensors/spa/state", parameters: ["state": (sender as UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+        manager.PUT(baseUrl + "/resources/spa/state", parameters: ["state": (sender as UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             
             }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("FAILED!")
@@ -212,7 +215,7 @@ class ViewController: UIViewController {
 
         var newState = (sender as UISwitch).on ? 1 : 0
         println(newState)
-        manager.PUT(shadeBase + "/resources/sensors/" + objStr + "/state", parameters: ["state": newState], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+        manager.PUT(baseUrl + "/resources/" + objStr + "/state", parameters: ["state": newState], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
 
         }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
             println("FAILED!")
@@ -223,7 +226,7 @@ class ViewController: UIViewController {
     
     func registerPushToken(token: NSData)
     {
-        manager.POST(gaeBase + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+        manager.POST(baseUrl + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             
             }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("FAILED!")
