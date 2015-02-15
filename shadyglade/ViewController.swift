@@ -12,7 +12,6 @@ import UIKit
 //let poolBase = "http://192.168.1.50:7379"
 
 //let baseUrl = "https://shadyglade-app.appspot.com"
-let baseUrl = "http://localhost:8888"
 
 //let base = "https://192.168.1.51:7379" // rpi01
 
@@ -86,15 +85,7 @@ class ViewController: UIViewController {
         if let urlBase = defaults.stringForKey("baseUrl") {
 
             for i in 1...4 {
-/*
-                from AFNetworking/AFHTTPRequestOperationManager.m
-                NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
-                AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
-                [self.operationQueue addOperation:operation];
-*/
-                let request = manager.requestSerializer.requestWithMethod("GET", URLString: baseUrl + "/resources/shade\(i)/state", parameters: nil, error: nil)
-                let operation = manager.HTTPRequestOperationWithRequest(request,
-                    success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                manager.GET(urlBase + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                         let responseDict = responseObject as NSDictionary
                         let updown = ((responseDict["state"]! as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
                         switch i as Int {
@@ -112,55 +103,53 @@ class ViewController: UIViewController {
                         
                     },
                     failure: self.RequestOperationFailureAlert)
-                
-                manager.operationQueue.addOperation(operation)
 
             }
+
+            manager.GET(urlBase + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                let responseDict = responseObject as NSDictionary
+
+                switch responseDict["state"]! as Int {
+                case 0:
+                    self.spaState.textColor = UIColor.darkGrayColor()
+                    self.spaState.text = "Off"
+                    self.spaSwitch.on = false
+                    self.spaSwitch.enabled = true
+                case 1:
+                    self.spaState.textColor = UIColor.greenColor()
+                    self.spaState.text = "On"
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 2:
+                    self.spaState.textColor = UIColor.grayColor()
+                    self.spaState.text = "Starting..."
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = false
+                case 3:
+                    self.spaState.textColor = UIColor.yellowColor()
+                    self.spaState.text = "Warming..."
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 4:
+                    self.spaState.textColor = UIColor.orangeColor()
+                    self.spaState.text = "Standby"
+                    self.spaSwitch.on = true
+                    self.spaSwitch.enabled = true
+                case 5:
+                    self.spaState.textColor = UIColor.grayColor()
+                    self.spaState.text = "Stopping..."
+                    self.spaSwitch.on = false
+                    self.spaSwitch.enabled = false
+                default:
+                    println("huh?")
+                }
+                
+                }, failure: self.RequestOperationFailureAlert
+            )
         }
         else {
             performSegueWithIdentifier("goToSettings", sender: self)
         }
-
-        manager.GET(baseUrl + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-            let responseDict = responseObject as NSDictionary
-
-            switch responseDict["state"]! as Int {
-            case 0:
-                self.spaState.textColor = UIColor.darkGrayColor()
-                self.spaState.text = "Off"
-                self.spaSwitch.on = false
-                self.spaSwitch.enabled = true
-            case 1:
-                self.spaState.textColor = UIColor.greenColor()
-                self.spaState.text = "On"
-                self.spaSwitch.on = true
-                self.spaSwitch.enabled = true
-            case 2:
-                self.spaState.textColor = UIColor.grayColor()
-                self.spaState.text = "Starting..."
-                self.spaSwitch.on = true
-                self.spaSwitch.enabled = false
-            case 3:
-                self.spaState.textColor = UIColor.yellowColor()
-                self.spaState.text = "Warming..."
-                self.spaSwitch.on = true
-                self.spaSwitch.enabled = true
-            case 4:
-                self.spaState.textColor = UIColor.orangeColor()
-                self.spaState.text = "Standby"
-                self.spaSwitch.on = true
-                self.spaSwitch.enabled = true
-            case 5:
-                self.spaState.textColor = UIColor.grayColor()
-                self.spaState.text = "Stopping..."
-                self.spaSwitch.on = false
-                self.spaSwitch.enabled = false
-            default:
-                println("huh?")
-            }
-            
-            }, failure: self.RequestOperationFailureAlert
-        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -180,13 +169,21 @@ class ViewController: UIViewController {
 
     
     @IBAction func spaSceneChange(sender: AnyObject) {
-        manager.PUT(baseUrl + "/resources/spa/state", parameters: ["state": (sender as UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-            
-            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println("FAILED!")
-                println(error)
-        })
-        self.reloadView()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let urlBase = defaults.stringForKey("baseUrl") {
+
+            manager.PUT(urlBase + "/resources/spa/state", parameters: ["state": (sender as UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                
+                }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                    println("FAILED!")
+                    println(error)
+            })
+            self.reloadView()
+        }
+        else {
+            performSegueWithIdentifier("goToSettings", sender: self)
+        }
 
     }
     
@@ -215,24 +212,38 @@ class ViewController: UIViewController {
 
         var newState = (sender as UISwitch).on ? 1 : 0
         println(newState)
-        manager.PUT(baseUrl + "/resources/" + objStr + "/state", parameters: ["state": newState], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let urlBase = defaults.stringForKey("baseUrl") {
+            manager.PUT(urlBase + "/resources/" + objStr + "/state", parameters: ["state": newState], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
 
-        }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-            println("FAILED!")
-            println(error)
-        })
+            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("FAILED!")
+                println(error)
+            })
+        }
+        else {
+            performSegueWithIdentifier("goToSettings", sender: self)
+        }
 
     }
     
     func registerPushToken(token: NSData)
     {
-        manager.POST(baseUrl + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-            
-            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println("FAILED!")
-                println(error)
-        })
+        let defaults = NSUserDefaults.standardUserDefaults()
         
+        if let urlBase = defaults.stringForKey("baseUrl") {
+            manager.POST(urlBase + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                
+                }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                    println("FAILED!")
+                    println(error)
+            })
+        }
+        else {
+            performSegueWithIdentifier("goToSettings", sender: self)
+        }
+    
     }
 
 }
