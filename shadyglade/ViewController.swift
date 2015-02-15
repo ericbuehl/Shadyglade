@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         if let urlBase = defaults.stringForKey("baseUrl") {
 
             for i in 1...4 {
-                manager.GET(urlBase + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                manager.GET(urlBase + "/resources/shade\(i)/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                         let responseDict = responseObject as NSDictionary
                         let updown = ((responseDict["state"]! as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
                         switch i as Int {
