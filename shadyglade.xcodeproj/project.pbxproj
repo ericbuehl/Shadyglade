@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073A6E4F1ABD258500AE878B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073A6E4E1ABD258500AE878B /* NotificationCenter.framework */; };
+		073A6E541ABD258500AE878B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A6E531ABD258500AE878B /* TodayViewController.swift */; };
+		073A6E561ABD258500AE878B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073A6E551ABD258500AE878B /* MainInterface.storyboard */; };
+		073A6E591ABD258500AE878B /* wiimough.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 073A6E4D1ABD258500AE878B /* wiimough.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		073A6E5E1ABD2A5500AE878B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF6CF5BD294F0DA5E7F132 /* libPods.a */; };
 		076E64D71A10493A00407989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E64CB1A10493A00407989 /* AppDelegate.swift */; };
 		076E64D81A10493A00407989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CC1A10493A00407989 /* LaunchScreen.xib */; };
 		076E64D91A10493A00407989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076E64CE1A10493A00407989 /* Main.storyboard */; };
@@ -21,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		073A6E571ABD258500AE878B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 078C2ECC19CF31A3006938DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 073A6E4C1ABD258500AE878B;
+			remoteInfo = wiimough;
+		};
 		078C2EEA19CF31A3006938DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 078C2ECC19CF31A3006938DA /* Project object */;
@@ -31,6 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		073A6E5D1ABD258500AE878B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				073A6E591ABD258500AE878B /* wiimough.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		076F9DE919CFA6EA00A8DCEF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +66,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		071A5DE61ABD2C8E007651D6 /* wiimough-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wiimough-Bridging-Header.h"; sourceTree = "<group>"; };
+		073A6E4D1ABD258500AE878B /* wiimough.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = wiimough.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		073A6E4E1ABD258500AE878B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		073A6E521ABD258500AE878B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073A6E531ABD258500AE878B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		073A6E551ABD258500AE878B /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		07664F971A226808009641EA /* shadyglade-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shadyglade-Bridging-Header.h"; sourceTree = "<group>"; };
 		076C72431A22C6E000EF1392 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		076E64CB1A10493A00407989 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,11 +87,21 @@
 		07D6A57E1A2BB9DC00439611 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		07D6A5811A2BC02600439611 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		07D6A5831A2BC40300439611 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		72A31B0E99E6486FB9920372 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		08885F9A6079C5B8BE8E9660 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		138681296D4F82365B01AE4C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FDCF6CF5BD294F0DA5E7F132 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		073A6E4A1ABD258500AE878B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073A6E4F1ABD258500AE878B /* NotificationCenter.framework in Frameworks */,
+				073A6E5E1ABD2A5500AE878B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		078C2ED119CF31A3006938DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073A6E501ABD258500AE878B /* wiimough */ = {
+			isa = PBXGroup;
+			children = (
+				073A6E531ABD258500AE878B /* TodayViewController.swift */,
+				073A6E551ABD258500AE878B /* MainInterface.storyboard */,
+				071A5DE61ABD2C8E007651D6 /* wiimough-Bridging-Header.h */,
+				073A6E511ABD258500AE878B /* Supporting Files */,
+			);
+			path = wiimough;
+			sourceTree = "<group>";
+		};
+		073A6E511ABD258500AE878B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				073A6E521ABD258500AE878B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		076E64CA1A10493A00407989 /* shadyglade */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +170,10 @@
 			children = (
 				076E64CA1A10493A00407989 /* shadyglade */,
 				076E64D41A10493A00407989 /* shadygladeTests */,
+				073A6E501ABD258500AE878B /* wiimough */,
 				078C2ED519CF31A3006938DA /* Products */,
 				F3FF205A076245B3941589B8 /* Frameworks */,
-				72A31B0E99E6486FB9920372 /* Pods.xcconfig */,
+				C15402173558D8EC69B68AA9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +182,7 @@
 			children = (
 				078C2ED419CF31A3006938DA /* shadyglade.app */,
 				078C2EE919CF31A3006938DA /* shadygladeTests.xctest */,
+				073A6E4D1ABD258500AE878B /* wiimough.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,11 +195,21 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		C15402173558D8EC69B68AA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				138681296D4F82365B01AE4C /* Pods.debug.xcconfig */,
+				08885F9A6079C5B8BE8E9660 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F3FF205A076245B3941589B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				076C72431A22C6E000EF1392 /* SwiftyJSON.framework */,
 				FDCF6CF5BD294F0DA5E7F132 /* libPods.a */,
+				073A6E4E1ABD258500AE878B /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +217,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		073A6E4C1ABD258500AE878B /* wiimough */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 073A6E5C1ABD258500AE878B /* Build configuration list for PBXNativeTarget "wiimough" */;
+			buildPhases = (
+				073A6E491ABD258500AE878B /* Sources */,
+				073A6E4A1ABD258500AE878B /* Frameworks */,
+				073A6E4B1ABD258500AE878B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wiimough;
+			productName = wiimough;
+			productReference = 073A6E4D1ABD258500AE878B /* wiimough.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		078C2ED319CF31A3006938DA /* shadyglade */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 078C2EF319CF31A3006938DA /* Build configuration list for PBXNativeTarget "shadyglade" */;
@@ -157,10 +244,12 @@
 				078C2ED219CF31A3006938DA /* Resources */,
 				076F9DE919CFA6EA00A8DCEF /* CopyFiles */,
 				625AE6EFF14F4DB4A1C0F39A /* Copy Pods Resources */,
+				073A6E5D1ABD258500AE878B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				073A6E581ABD258500AE878B /* PBXTargetDependency */,
 			);
 			name = shadyglade;
 			productName = shadyglade;
@@ -194,6 +283,10 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Eric Buehl";
 				TargetAttributes = {
+					073A6E4C1ABD258500AE878B = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = LGZ9H7XXZY;
+					};
 					078C2ED319CF31A3006938DA = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = LGZ9H7XXZY;
@@ -219,11 +312,20 @@
 			targets = (
 				078C2ED319CF31A3006938DA /* shadyglade */,
 				078C2EE819CF31A3006938DA /* shadygladeTests */,
+				073A6E4C1ABD258500AE878B /* wiimough */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		073A6E4B1ABD258500AE878B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073A6E561ABD258500AE878B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		078C2ED219CF31A3006938DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8348E2BC3754E608D7103FF /* Check Pods Manifest.lock */ = {
@@ -279,6 +381,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		073A6E491ABD258500AE878B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073A6E541ABD258500AE878B /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		078C2ED019CF31A3006938DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +411,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		073A6E581ABD258500AE878B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 073A6E4C1ABD258500AE878B /* wiimough */;
+			targetProxy = 073A6E571ABD258500AE878B /* PBXContainerItemProxy */;
+		};
 		078C2EEB19CF31A3006938DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 078C2ED319CF31A3006938DA /* shadyglade */;
@@ -328,6 +443,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		073A6E5A1ABD258500AE878B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 138681296D4F82365B01AE4C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = wiimough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "wiimough/wiimough-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		073A6E5B1ABD258500AE878B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08885F9A6079C5B8BE8E9660 /* Pods.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = wiimough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "wiimough/wiimough-Bridging-Header.h";
+			};
+			name = Release;
+		};
 		078C2EF119CF31A3006938DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,11 +559,12 @@
 		};
 		078C2EF419CF31A3006938DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A31B0E99E6486FB9920372 /* Pods.xcconfig */;
+			baseConfigurationReference = 138681296D4F82365B01AE4C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
@@ -428,11 +579,12 @@
 		};
 		078C2EF519CF31A3006938DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A31B0E99E6486FB9920372 /* Pods.xcconfig */;
+			baseConfigurationReference = 08885F9A6079C5B8BE8E9660 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
@@ -482,6 +634,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		073A6E5C1ABD258500AE878B /* Build configuration list for PBXNativeTarget "wiimough" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				073A6E5A1ABD258500AE878B /* Debug */,
+				073A6E5B1ABD258500AE878B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		078C2ECF19CF31A3006938DA /* Build configuration list for PBXProject "shadyglade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
