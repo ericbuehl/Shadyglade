@@ -11,7 +11,7 @@ import UIKit
 //let shadeBase = "http://192.168.1.54:7378"
 //let poolBase = "http://192.168.1.50:7379"
 
-//let baseUrl = "https://shadyglade-app.appspot.com"
+let gAppsBaseUrl = "https://shadyglade-app.appspot.com"
 
 //let base = "https://192.168.1.51:7379" // rpi01
 
@@ -105,6 +105,17 @@ class ViewController: UIViewController {
                     failure: self.RequestOperationFailureAlert)
 
             }
+            
+            manager.GET(urlBase + "/resources/spaTemp/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                let responseDict = responseObject as NSDictionary
+                
+                if let temp = (responseDict["state"] as? Int) {
+                    self.spaTemp.text = String(format: "%d °F", temp)
+                }
+                
+                }, failure: self.RequestOperationFailureAlert
+            )
+
 
             manager.GET(urlBase + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 let responseDict = responseObject as NSDictionary
@@ -126,12 +137,12 @@ class ViewController: UIViewController {
                     self.spaSwitch.on = true
                     self.spaSwitch.enabled = false
                 case 3:
-                    self.spaState.textColor = UIColor.yellowColor()
+                    self.spaState.textColor = UIColor.orangeColor()
                     self.spaState.text = "Warming..."
                     self.spaSwitch.on = true
                     self.spaSwitch.enabled = true
                 case 4:
-                    self.spaState.textColor = UIColor.orangeColor()
+                    self.spaState.textColor = UIColor.blueColor()
                     self.spaState.text = "Standby"
                     self.spaSwitch.on = true
                     self.spaSwitch.enabled = true
@@ -166,6 +177,7 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var spaSwitch: UISwitch!
     @IBOutlet weak var spaState: UILabel!
+    @IBOutlet weak var spaTemp: UILabel!
 
     
     @IBAction func spaSceneChange(sender: AnyObject) {
@@ -233,7 +245,7 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let urlBase = defaults.stringForKey("baseUrl") {
-            manager.POST(urlBase + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            manager.POST(gAppsBaseUrl + "/register", parameters: ["token": dataToHex(token)], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 
                 }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                     println("FAILED!")
