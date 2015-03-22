@@ -160,7 +160,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-9x-3SW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6u-Wd-4Rb">
+                                <rect key="frame" x="46" y="57" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="hostFieldDidEndOnExit:" destination="1uu-YH-Ymq" eventType="editingDidEndOnExit" id="7l3-zi-dbH"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-9x-3SW">
                                 <rect key="frame" x="224" y="518" width="80" height="30"/>
                                 <state key="normal" title="✔ Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,16 +178,12 @@
                                     <segue destination="BYZ-38-t0r" kind="custom" customClass="DismissSegue" id="qJA-Iy-xO8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6u-Wd-4Rb">
-                                <rect key="frame" x="46" y="57" width="240" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="hostFieldDidEndOnExit:" destination="1uu-YH-Ymq" eventType="editingDidEndOnExit" id="7l3-zi-dbH"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xpY-yl-MDi" firstAttribute="top" secondItem="Wol-9x-3SW" secondAttribute="bottom" constant="20" id="RPW-h2-CBO"/>
+                            <constraint firstItem="Wol-9x-3SW" firstAttribute="trailing" secondItem="BWF-uU-P6t" secondAttribute="trailingMargin" id="gVw-9s-ZT4"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="Wol-9x-3SW" id="XxF-jz-5Lb"/>
