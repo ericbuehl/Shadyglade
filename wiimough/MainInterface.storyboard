@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSN-4R-yaF">
-                                <rect key="frame" x="16" y="0.0" width="287" height="37"/>
+                                <rect key="frame" x="116" y="0.0" width="86" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Abbey!">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,9 +26,22 @@
                                     <action selector="didToggle:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="MJa-ZX-Gqz"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aDZ-t0-am9">
+                                <rect key="frame" x="88" y="9" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8S-c8-SNl">
+                                <rect key="frame" x="96" y="8" width="12" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="aDZ-t0-am9" firstAttribute="centerY" secondItem="pSN-4R-yaF" secondAttribute="centerY" id="APv-Ix-ncF"/>
+                            <constraint firstItem="pSN-4R-yaF" firstAttribute="leading" secondItem="aDZ-t0-am9" secondAttribute="trailing" constant="8" id="AtB-wH-KZR"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="pSN-4R-yaF" secondAttribute="bottom" id="Eob-Xa-5Pf"/>
+                            <constraint firstItem="s8S-c8-SNl" firstAttribute="centerX" secondItem="aDZ-t0-am9" secondAttribute="centerX" id="F1R-L5-jyk"/>
+                            <constraint firstItem="s8S-c8-SNl" firstAttribute="centerY" secondItem="aDZ-t0-am9" secondAttribute="centerY" id="MKk-jl-9Ds"/>
                             <constraint firstItem="pSN-4R-yaF" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="bKQ-iQ-Rfi"/>
                             <constraint firstItem="pSN-4R-yaF" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="kGy-FW-21D"/>
                         </constraints>
@@ -39,10 +52,14 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="37"/>
+                    <connections>
+                        <outlet property="progressSpinner" destination="aDZ-t0-am9" id="Xe2-oM-Twk"/>
+                        <outlet property="statusLabel" destination="s8S-c8-SNl" id="Mmp-sh-ref"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="284.5"/>
+            <point key="canvasLocation" x="497" y="284.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
