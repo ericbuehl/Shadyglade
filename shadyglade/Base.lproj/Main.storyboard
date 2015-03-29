@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -60,12 +60,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mM9-Si-juN">
-                                <rect key="frame" x="255" y="275" width="51" height="31"/>
-                                <connections>
-                                    <action selector="shadeStateChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="KOP-pz-rrR"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All Shades" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57f-IU-qfq">
                                 <rect key="frame" x="139" y="280" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -119,10 +113,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voC-Yr-iyR">
+                                <rect key="frame" x="255" y="276" width="30" height="30"/>
+                                <state key="normal" title="⬆️">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shadeStateChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HY9-Cd-iZ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vw-25-fYO">
+                                <rect key="frame" x="280" y="276" width="30" height="30"/>
+                                <state key="normal" title="⬇️">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shadeStateChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="giy-pD-Dtz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iUl-iY-JKI" firstAttribute="top" secondItem="mM9-Si-juN" secondAttribute="bottom" constant="50" id="2WA-EH-KpO"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="centerY" secondItem="7IS-NR-Fu4" secondAttribute="centerY" id="3Ix-UA-DWl"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="leading" secondItem="mNe-lE-WIH" secondAttribute="leading" id="52C-gE-HRw"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="leading" secondItem="OJg-xL-ibS" secondAttribute="leading" id="55G-i6-Cq0"/>
@@ -137,16 +148,19 @@
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DUl-fX-y5W"/>
                             <constraint firstItem="iUl-iY-JKI" firstAttribute="centerY" secondItem="LI4-nP-YBc" secondAttribute="centerY" id="EnR-Tf-X9v"/>
                             <constraint firstItem="8Lz-5B-2ws" firstAttribute="centerY" secondItem="OJg-xL-ibS" secondAttribute="centerY" id="ILk-6Z-9VG"/>
-                            <constraint firstItem="Aed-g7-BBB" firstAttribute="leading" secondItem="mM9-Si-juN" secondAttribute="leading" id="IbA-O9-qeH"/>
                             <constraint firstItem="8Lz-5B-2ws" firstAttribute="top" secondItem="nIH-7p-zSP" secondAttribute="bottom" constant="13" id="PIE-ms-6s1"/>
+                            <constraint firstItem="2Vw-25-fYO" firstAttribute="centerY" secondItem="voC-Yr-iyR" secondAttribute="centerY" id="QCt-mY-TlG"/>
                             <constraint firstItem="63f-kV-j9k" firstAttribute="leading" secondItem="nIH-7p-zSP" secondAttribute="leading" id="R3R-Oy-jzb"/>
+                            <constraint firstItem="iUl-iY-JKI" firstAttribute="top" secondItem="57f-IU-qfq" secondAttribute="bottom" constant="55" id="Tft-iW-VEy"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="centerY" secondItem="7IS-NR-Fu4" secondAttribute="centerY" id="VHI-Mf-aMY"/>
                             <constraint firstItem="63f-kV-j9k" firstAttribute="leading" secondItem="57f-IU-qfq" secondAttribute="leading" id="Xbi-Ps-KpI"/>
                             <constraint firstItem="63f-kV-j9k" firstAttribute="top" secondItem="iUl-iY-JKI" secondAttribute="bottom" constant="8" id="Xge-xH-n7T"/>
                             <constraint firstItem="63f-kV-j9k" firstAttribute="leading" secondItem="7IS-NR-Fu4" secondAttribute="leading" id="Z4g-Q8-zrv"/>
-                            <constraint firstItem="57f-IU-qfq" firstAttribute="centerY" secondItem="mM9-Si-juN" secondAttribute="centerY" id="c7U-1C-Qud"/>
+                            <constraint firstItem="2Vw-25-fYO" firstAttribute="centerY" secondItem="57f-IU-qfq" secondAttribute="centerY" id="ayE-f8-M4B"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="leading" secondItem="LI4-nP-YBc" secondAttribute="leading" id="h2G-LG-cKd"/>
                             <constraint firstItem="63f-kV-j9k" firstAttribute="leading" secondItem="iUl-iY-JKI" secondAttribute="leading" id="hGj-Sw-d9Y"/>
+                            <constraint firstItem="voC-Yr-iyR" firstAttribute="leading" secondItem="LI4-nP-YBc" secondAttribute="leading" id="hf8-5B-pFW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Vw-25-fYO" secondAttribute="trailing" constant="-6" id="l3J-dX-S2t"/>
                             <constraint firstItem="Aed-g7-BBB" firstAttribute="leading" secondItem="iXV-gj-JxF" secondAttribute="leading" id="l4r-fQ-RYM"/>
                             <constraint firstItem="nIH-7p-zSP" firstAttribute="top" secondItem="ign-cM-Wal" secondAttribute="bottom" constant="13" id="moD-ME-OEi"/>
                             <constraint firstItem="ign-cM-Wal" firstAttribute="top" secondItem="7IS-NR-Fu4" secondAttribute="bottom" constant="13" id="myg-3o-WqV"/>
@@ -171,7 +185,8 @@
                         <outlet property="shade2switch" destination="mNe-lE-WIH" id="Ra2-3t-x6r"/>
                         <outlet property="shade3switch" destination="rdw-FT-dGx" id="SHV-Oo-0T9"/>
                         <outlet property="shade4switch" destination="OJg-xL-ibS" id="p48-TU-jkX"/>
-                        <outlet property="shadeAllSwitch" destination="mM9-Si-juN" id="EQi-3b-bJd"/>
+                        <outlet property="shadeAllDown" destination="2Vw-25-fYO" id="sGW-Ja-S5p"/>
+                        <outlet property="shadeAllUp" destination="voC-Yr-iyR" id="6ag-Be-BFw"/>
                         <outlet property="spaState" destination="63f-kV-j9k" id="bTR-c0-Dwu"/>
                         <outlet property="spaSwitch" destination="LI4-nP-YBc" id="RTo-mM-uWL"/>
                         <outlet property="spaTemp" destination="iXV-gj-JxF" id="Q7n-Ng-h0W"/>

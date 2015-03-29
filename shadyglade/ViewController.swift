@@ -173,7 +173,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var shade2switch: UISwitch!
     @IBOutlet weak var shade3switch: UISwitch!
     @IBOutlet weak var shade4switch: UISwitch!
-    @IBOutlet weak var shadeAllSwitch: UISwitch!
+    @IBOutlet weak var shadeAllUp: UIButton!
+    @IBOutlet weak var shadeAllDown: UIButton!
+
  
     @IBOutlet weak var spaSwitch: UISwitch!
     @IBOutlet weak var spaState: UILabel!
@@ -202,32 +204,49 @@ class ViewController: UIViewController {
     @IBAction func shadeStateChange(sender: AnyObject) {
  
         var objStr = ""
-        switch sender as UISwitch{
-        case shade1switch:
-            objStr = "shade1"
-        case shade2switch:
-            objStr = "shade2"
-        case shade3switch:
-            objStr = "shade3"
-        case shade4switch:
-            objStr = "shade4"
-        case shadeAllSwitch:
+        var newState:Int? = nil
+
+        switch sender {
+        case is UISwitch:
+            switch sender as UISwitch {
+            case shade1switch:
+                objStr = "shade1"
+            case shade2switch:
+                objStr = "shade2"
+            case shade3switch:
+                objStr = "shade3"
+            case shade4switch:
+                objStr = "shade4"
+            default:
+                println("Unknown UISwitch")
+                return
+            }
+            newState = (sender as UISwitch).on ? 1 : 0
+        case is UIButton:
+            switch sender as UIButton {
+            case shadeAllUp:
+                newState = 0
+            case shadeAllDown:
+                newState = 1
+
+            default:
+                println("Unknown UIButton")
+                return
+            }
             objStr = "allShades"
-            shade1switch.on = (sender as UISwitch).on
-            shade2switch.on = (sender as UISwitch).on
-            shade3switch.on = (sender as UISwitch).on
-            shade4switch.on = (sender as UISwitch).on
+            shade1switch.on = newState > 0
+            shade2switch.on = newState > 0
+            shade3switch.on = newState > 0
+            shade4switch.on = newState > 0
         default:
             println("Unknown sender")
             return
         }
 
-        var newState = (sender as UISwitch).on ? 1 : 0
-        println(newState)
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let urlBase = defaults.stringForKey("baseUrl") {
-            manager.PUT(urlBase + "/resources/" + objStr + "/state", parameters: ["state": newState], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            manager.PUT(urlBase + "/resources/" + objStr + "/state", parameters: ["state": newState!], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
 
             }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("FAILED!")
