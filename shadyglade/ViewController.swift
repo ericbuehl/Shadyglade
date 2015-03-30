@@ -207,8 +207,8 @@ class ViewController: UIViewController {
         var newState:Int? = nil
 
         switch sender {
-        case is UISwitch:
-            switch sender as UISwitch {
+        case let s as UISwitch:
+            switch s {
             case shade1switch:
                 objStr = "shade1"
             case shade2switch:
@@ -222,8 +222,8 @@ class ViewController: UIViewController {
                 return
             }
             newState = (sender as UISwitch).on ? 1 : 0
-        case is UIButton:
-            switch sender as UIButton {
+        case let b as UIButton:
+            switch b {
             case shadeAllUp:
                 newState = 0
             case shadeAllDown:
