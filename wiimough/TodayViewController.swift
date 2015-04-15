@@ -37,7 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         manager.GET("http://10.0.1.8:5000/api/device/Abbey", parameters: [], success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
 
             
-            switch (responseObject as NSDictionary)["state"] as Int {
+            switch (responseObject as! NSDictionary)["state"] as! Int {
             case 0: 
                 self.statusLabel.text = "🌙" //🌚
             default:

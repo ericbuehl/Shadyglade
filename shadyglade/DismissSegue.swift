@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Eric Buehl. All rights reserved.
 //
 
-import UiKit
+import UIKit
 
 
 @objc(DismissSegue)  // stupid swift/objc name mangling: http://stackoverflow.com/questions/24185345/custom-segue-in-swift

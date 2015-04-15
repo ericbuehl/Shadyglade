@@ -86,8 +86,8 @@ class ViewController: UIViewController {
 
             for i in 1...4 {
                 manager.GET(urlBase + "/resources/shade\(i)/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                        let responseDict = responseObject as NSDictionary
-                        let updown = ((responseDict["state"]! as Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
+                        let responseDict = responseObject as! NSDictionary
+                        let updown = ((responseDict["state"]! as! Int) & 1) == 1 ? true : false  // 0 = up, 1 = down, 2 = moving up, 3 = moving down
                         switch i as Int {
                         case 1:
                             self.shade1switch.setOn(updown, animated: false)
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             }
             
             manager.GET(urlBase + "/resources/spaTemp/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                let responseDict = responseObject as NSDictionary
+                let responseDict = responseObject as! NSDictionary
                 
                 if let temp = (responseDict["state"] as? Int) {
                     self.spaTemp.text = String(format: "%d °F", temp)
@@ -118,9 +118,9 @@ class ViewController: UIViewController {
 
 
             manager.GET(urlBase + "/resources/spa/state", parameters:nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                let responseDict = responseObject as NSDictionary
+                let responseDict = responseObject as! NSDictionary
 
-                switch responseDict["state"]! as Int {
+                switch responseDict["state"]! as! Int {
                 case 0:
                     self.spaState.textColor = UIColor.darkGrayColor()
                     self.spaState.text = "Off"
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
         
         if let urlBase = defaults.stringForKey("baseUrl") {
 
-            manager.PUT(urlBase + "/resources/spa/state", parameters: ["state": (sender as UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            manager.PUT(urlBase + "/resources/spa/state", parameters: ["state": (sender as! UISwitch).on ? 1 : 0], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 
                 }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                     println("FAILED!")
@@ -221,7 +221,7 @@ class ViewController: UIViewController {
                 println("Unknown UISwitch")
                 return
             }
-            newState = (sender as UISwitch).on ? 1 : 0
+            newState = (sender as! UISwitch).on ? 1 : 0
         case let b as UIButton:
             switch b {
             case shadeAllUp:
